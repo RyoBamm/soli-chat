@@ -120,11 +120,11 @@
     height: 1000px;
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
+    transition: 0.5s;
     &__box{
       text-align: center;
       padding: 30px 0 30px 0;
       position: relative;
-      transition: all 0.3s ease;
       a{
         color: white;
         text-decoration: none;
