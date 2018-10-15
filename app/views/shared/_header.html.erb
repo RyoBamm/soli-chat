@@ -1,16 +1,57 @@
 <header>
   <div class="header-wrapper clearfix">
     <div class = "header-wrapper__left l-left">
-      <div class="ico-menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-      <div class = "">
+      <div class="header-icon">
+        <a href="/">
+          <%= image_tag 'SoliChat-logo-white.png', :size => "170x70", :alt => "SoliChat" %>
+        </a>
       </div>
     </div>
-    <span>MENU</span>
-    <div class = "header-wrapper__right l-right">
+
+    <div class = "header-wrapper__right">
+      <% if user_signed_in?%>
+        <div class = "user-information-box">
+          <div class = "user-information-wrapper">
+            <%= image_tag 'pengu.jpg', :size => "45x45", :alt => "user" %>
+            <a class = "header-link">Menu</a>
+          </div>
+          <div class = "user-nav">
+            <div class = user-nav__box>
+              <a>My Page</a>
+            </div>
+            <div class = user-nav__box>
+              <a>News</a>
+            </div>
+            <div class = user-nav__box>
+              <a>Setting</a>
+            </div>
+            <div class = user-nav__box>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+<!--               <a href = <%= destroy_user_session_path %> style= "text-decoration:none;" >Sign Out</a> -->
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class = "signIn-box header-box">
+          <%= link_to "Sign In", new_user_session_path, class: "header-link" %>
+<!--           <a class = "header-link">Sign In</a> -->
+        </div>
+<!--         <div class = "signup-box header-box">
+          <a class = "header-link">SignUp</a>
+        </div> -->
+      <% end %>
+
+      <div class = "solichat-box header-box">
+        <a class = "header-link">SoliChat</a>
+      </div>
+      <div class = "find-users-box header-box">
+        <a class = "header-link">Friend</a>
+      </div>
+      <div class = "find-music-box header-box">
+        <a class = "header-link">Music</a>
+      </div>
     </div>
+  </div>
+  <div class = "nav-bar">
   </div>
 </header>
