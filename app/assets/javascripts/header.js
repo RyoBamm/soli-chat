@@ -4,8 +4,10 @@ $(function(){
     console.log(clickCondition);
     if (clickCondition == 'block') {
       $('.user-nav').css('display', 'none');
+      $('.user-information-wrapper a').text("Menu");
     }else{
       $('.user-nav').css('display', 'block');
+      $('.user-information-wrapper a').text("Close");
     }
   });
 });
