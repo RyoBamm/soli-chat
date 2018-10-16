@@ -1,4 +1,5 @@
 $(function(){
+$(document).on('turbolinks:load', function() {
   $('.user-information-wrapper').on('click', function(e){
     var clickCondition = $('.user-nav').css('display');
     console.log(clickCondition);
@@ -10,4 +11,5 @@ $(function(){
       $('.user-information-wrapper a').text("Close");
     }
   });
+});
 });

@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     redirect_to :root unless user_signed_in? && @user.id == current_user.id
+    # binding.pry
   end
 
   private

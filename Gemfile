@@ -62,5 +62,6 @@ gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'carrierwave'
 gem 'rmagick'
-
+gem 'pry-rails'
+gem 'pry-byebug'
 

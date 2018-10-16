@@ -1,3 +1,117 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// View: Show
+.mypage_wrapper{
+  min-width: 870px;
+  .mypage_top{
+    width: 100%;
+    height: 500px;
+    background-color: #DDDDDD;
+    background-image: url(https://i.pximg.net/img-master/img/2013/10/27/22/01/13/39379535_p3_master1200.jpg);
+    background-size: 100% 150%;
+    margin-top: 70px;
+    border-bottom: 1px solid #D3D3D3;
+    &__user_icon{
+      float: left;
+      margin: 80px 0 0 15%;
+      img{
+        border: 1px solid silver;
+        border-radius: 150px;
+      }
+      .user_nickname{
+        font-size: 30px;
+        font-weight: bold;
+        font-family: Impact;
+        text-shadow: 1px 1px 0 #000;
+        letter-spacing: .1222rem;
+        color: white;
+        text-align: center;
+        margin-top: 20px;
+        display: block;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .user_userid{
+        text-shadow: 1px 1px 0 #000;
+        color: white;
+        text-align: center;
+        margin-top: 10px;
+        opacity: 0.7;
+        display: block;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+    &__user_menu{
+      width: 50%;
+      height: 500px;
+      color: white;
+      float: right;
+      background-color: rgba(10, 10, 10, 0.6);
+      border-left: 1px solid #D3D3D3;
+      .menu_title{
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        border-left: 5px solid rgba(0, 100, 100, 0.8);
+        text-shadow: 1px 1px 0 #000;
+        letter-spacing: 1px;
+      }
+      .user_menu_wrapper.user_data{
+        margin: 20px 0 10px 5%;
+        .follow{
+          font-size: 18px;
+        }
+        .post{
+          margin-top: 15px;
+        }
+      }
+      .user_menu_wrapper.areaTags{
+        margin: 40px 0 10px 5%;
+        .user_tag{
+          width: 145px;
+          height: 26px;
+          text-align: center;
+          line-height: 26px;
+          margin-top: 10px;
+          border-radius: 20px;
+          display: block;
+        }
+        .area_tags_wrapper{
+          height: 80px;
+          overflow: scroll;
+          .area_tags{
+            width: 210px;
+            float: left;
+            .user_tag{
+              margin-left: 20px;
+              background-color: green;
+              border: 1px solid #005500;
+            }
+          }
+          .music_tags{
+            // margin-left: 50px;
+            float: left;
+            display: block;
+            .user_tag{
+              background-color: #FF8C00;
+              border: 1px solid #D2691E;
+            }
+          }
+        }
+      }
+      .user_menu_wrapper.profile{
+        margin: 40px 0 10px 5%;
+        .profile_content{
+          width: 93%;
+          min-width: 350px;
+          height: 150px;
+          // background-color: rgba(10, 10, 10, 0.6);
+          border: 0.5px solid rgba(255, 255, 255, 0.5);
+          border-radius: 10px;
+          padding: 10px;
+          overflow: scroll;
+        }
+      }
+    }
+  }
+}
