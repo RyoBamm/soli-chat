@@ -12,7 +12,7 @@
       <% if user_signed_in?%>
         <div class = "user-information-box">
           <div class = "user-information-wrapper">
-            <%= image_tag 'pengu.jpg', :size => "45x45", :alt => "user" %>
+            <%= image_tag current_user.avatar, :size => "45x45", :alt => "user" %>
             <a class = "header-link">Menu</a>
           </div>
           <div class = "user-nav">
