@@ -46,7 +46,7 @@ class UserImageUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
   def default_url
-      '/uploads/noimage.png'
+      '/uploads/noimage.gif'
   end
 
 end
