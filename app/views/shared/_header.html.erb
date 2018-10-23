@@ -17,15 +17,15 @@
           </div>
           <div class = "user-nav">
             <div class = user-nav__box>
-              <%= link_to "My Page", "users/#{current_user.id}" %>
+              <%= link_to "My Page", "/users/#{current_user.id}" %>
             </div>
-            <div class = user-nav__box>
+            <div class = "user-nav__box">
               <a>News</a>
             </div>
-            <div class = user-nav__box>
+            <div class = "user-nav__box">
               <a>Setting</a>
             </div>
-            <div class = user-nav__box>
+            <div class = "user-nav__box">
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
             </div>
           </div>
@@ -44,6 +44,14 @@
       </div>
       <div class = "find-music-box header-box">
         <a class = "header-link">Music</a>
+<!--         <div class = "class = music-menu-boxes">
+          <div class = "music-menu-box">
+            <a>探す</a>
+          </div>
+          <div class = "music-menu-box">
+            <a>投稿する</a>
+          </div>
+        </div> -->
       </div>
     </div>
   </div>
