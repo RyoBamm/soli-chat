@@ -35,12 +35,23 @@
       </div>
       <div class = "user_menu_wrapper profile">
         <p class = "menu_title">PROFILE</p>
-        <p class = "profile_content">カラオケ特訓中、都内在住の会社員25歳です。<br>一緒に練習できるカラオケ仲間・先生を募集中です!!<br>t<br>e<br>s<br>t<br>t<br>e<br>s<br>t<br>t</p>
+        <p class = "profile_content">カラオケ特訓中、都内在住の会社員25歳です。<br>一緒に練習できるカラオケ仲間・先生を募集中です!</p>
       </div>
-      <div class = "user_menu_wrapper" >
-      </div>
-      <div class = "user_menu_wrapper" >
-      </div>
+    </div>
+  </div>
+  <div class = "mypage_users_posts">
+    <div class = "menu_title">
+      <h3>
+        <%= @user.nickname %>さん&nbsp;の投稿一覧
+        <select class="posts_sort_select">
+          <option value="new">新着順</option>
+          <option value="old">投稿順</option>
+          <option value="like">いいね数</option>
+        </select>
+      </h3>
+    </div>
+    <div class = "posted_contents">
+      <iframe width="200px" height="200px" src="https://www.youtube.com/embed/8X2td4LtgzQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
   </div>
 </div>
