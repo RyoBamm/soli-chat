@@ -64,4 +64,5 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'pry-rails'
 gem 'pry-byebug'
+gem 'kaminari'
 

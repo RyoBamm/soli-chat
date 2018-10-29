@@ -21,9 +21,8 @@
 }
 
 // レスポンシブ対応用（SP）
-// @media screen and ( max-width:599px) {
+// @media screen and ( max-width:829px) {
 //   .header-wrapper{
-//     height: 80px;
 //     background-color: gray;
 //   }
 // }
@@ -172,6 +171,7 @@
   margin-right: 60px;
   a{
     text-decoration: none;
+    color: lime;
   }
 }
 
