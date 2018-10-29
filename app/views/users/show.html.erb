@@ -50,32 +50,13 @@
         </select>
       </h3>
     </div>
-    <div class = "posted_contents">
-      <div class = "posted_content">
-        <div class = "posted_content__tags">
-          <div class = "content_tag">
-            <p>カラオケ</p>
-          </div>
-          <div class = "other_tags">
-            <p>...</p>
-          </div>
-          <div class = "created_date">
-            <p>2018/10/23</p>
-          </div>
-        </div>
-        <div class = "posted_content__thumbnail">
-          <iframe width="200px" height="200px" src="https://www.youtube.com/embed/8X2td4LtgzQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-        <div class = "posted_content__title">
-          <p>Debarge&nbsp;&nbsp;I&nbsp;Like&nbsp;It</p>
-        </div>
-        <div class = "posted_content__likes">
-          <i class="fa fa-heart fa-lg">
-            <a>12</a>
-          </i>
-          <div class = "show_detail">
-            <a>詳細</a>
-          </div>
+    <div class = "posted_contents_wrapper">
+      <div class = "posted_contents">
+        <div class = "content_wrapper">
+          <%= render "shared/posted_content" %>
+          <%= render "shared/posted_content" %>
+          <%= render "shared/posted_content" %>
+          <%= render "shared/posted_content" %>
         </div>
       </div>
     </div>
