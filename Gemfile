@@ -60,6 +60,10 @@ gem 'erb2haml'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
-
-
-
+gem 'carrierwave'
+gem 'rmagick'
+gem 'pry-rails'
+gem 'pry-byebug'
+gem 'kaminari'
+gem 'ruby-oembed'
+gem 'streamio-ffmpeg'

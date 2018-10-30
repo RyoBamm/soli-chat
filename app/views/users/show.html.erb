@@ -1,0 +1,64 @@
+<%= render "shared/header" %>
+<div class = "mypage_wrapper">
+  <div class = "mypage_top">
+    <div class = "mypage_top__user_icon">
+      <%= image_tag current_user.avatar, :size => "250x250", :alt => "user" %>
+      <a class = "user_nickname"><%= @user.nickname %></a>
+      <a class = "user_userid">ID: 100ac438</a>
+    </div>
+    <div class = "mypage_top__user_menu">
+      <div class = "user_menu_wrapper user_data" >
+        <p class = "menu_title">DATA</p>
+        <div class = "follow">
+          <a>フォロワー数&nbsp;:&nbsp;100人</a>&nbsp;&nbsp;&nbsp;&nbsp;<a>フォロー数&nbsp;:&nbsp;150人</a>
+        </div>
+        <div class = "post">
+          <a>投稿数&nbsp;:&nbsp;10件</a>
+          <a>&nbsp;&nbsp;&nbsp; 総いいね&nbsp;:&nbsp;150</a>
+          <a >&nbsp;&nbsp;&nbsp; ファン&nbsp;:&nbsp;20人</a>
+        </div>
+      </div>
+      <div class = "user_menu_wrapper areaTags">
+        <p class = "menu_title">TAGS</p>
+        <div class = "area_tags_wrapper">
+          <div class = "area_tags">
+            <a class = "user_area_tag user_tag">東京都</a>
+            <a class = "user_area_tag user_tag">渋谷区</a>
+          </div>
+          <div class = "music_tags">
+            <a class = "user_music_tag user_tag">カラオケ</a>
+            <a class = "user_music_tag user_tag">DTM</a>
+            <a class = "user_music_tag user_tag">ギター</a>
+            <a class = "user_music_tag user_tag">作曲</a>
+          </div>
+        </div>
+      </div>
+      <div class = "user_menu_wrapper profile">
+        <p class = "menu_title">PROFILE</p>
+        <p class = "profile_content">カラオケ特訓中、都内在住の会社員25歳です。<br>一緒に練習できるカラオケ仲間・先生を募集中です!</p>
+      </div>
+    </div>
+  </div>
+  <div class = "mypage_users_posts">
+    <div class = "menu_title">
+      <h3>
+        <%= @user.nickname %>さん&nbsp;の投稿一覧
+        <select class="posts_sort_select">
+          <option value="new">新着順</option>
+          <option value="old">投稿順</option>
+          <option value="like">いいね数</option>
+        </select>
+      </h3>
+    </div>
+    <div class = "posted_contents_wrapper">
+      <div class = "posted_contents">
+        <div class = "content_wrapper">
+          <%= render "shared/posted_content" %>
+          <%= render "shared/posted_content" %>
+          <%= render "shared/posted_content" %>
+          <%= render "shared/posted_content" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

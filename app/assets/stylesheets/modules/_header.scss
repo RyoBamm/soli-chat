@@ -8,6 +8,9 @@
   height: 70px;
   background-color: black;
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
   &__left{
     text-align: center;
     float: left;
@@ -18,9 +21,8 @@
 }
 
 // レスポンシブ対応用（SP）
-// @media screen and ( max-width:599px) {
+// @media screen and ( max-width:829px) {
 //   .header-wrapper{
-//     height: 80px;
 //     background-color: gray;
 //   }
 // }
@@ -82,6 +84,17 @@
   margin-right: 60px;
 }
 
+.find-music-box{
+  .music-menu-boxes{
+    margin: 0;
+    .music-menu-box{
+      a{
+        font-size: 13px;
+      }
+    }
+  }
+}
+
 .header-box:hover{
   .header-link{
   }
@@ -122,16 +135,24 @@
     display: none;
     transition: 0.5s;
     &__box{
+      width: 100%;
+      height: 76px;
       text-align: center;
-      padding: 30px 0 30px 0;
       position: relative;
       a{
         color: white;
         text-decoration: none;
+        line-height: 76px;
+        width: 230px;
+        height: 76px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
       }
     }
     &__box:hover{
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.8);
       border-left: 5px solid #33FFCC;
       a{
         color: #33FFCC;
@@ -150,8 +171,10 @@
   margin-right: 60px;
   a{
     text-decoration: none;
+    color: lime;
   }
 }
+
 
 
 
