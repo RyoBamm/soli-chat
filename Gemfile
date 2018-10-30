@@ -65,4 +65,5 @@ gem 'rmagick'
 gem 'pry-rails'
 gem 'pry-byebug'
 gem 'kaminari'
-
+gem 'ruby-oembed'
+gem 'streamio-ffmpeg'
