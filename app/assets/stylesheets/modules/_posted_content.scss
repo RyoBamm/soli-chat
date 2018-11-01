@@ -15,8 +15,9 @@
       width: 70px;
       height: 20px;
       font-size: 12px;
-      background-color: #CC3300;
-      border: 0.5px solid white;
+      color: rgba(255, 255, 255, 0.9);
+      background: linear-gradient(to top, #d31027, #ea384d);
+      border: 0.5px solid rgba(255, 255, 255, 0.8);
       border-radius: 10px;
       text-align: center;
       float: left;
@@ -58,10 +59,13 @@
     }
     .show_detail{
       background-color: #444444;
+      background: linear-gradient(to top, #232526, #414345);
+      background: linear-gradient(to top, #283048, #859398);
+      background: linear-gradient(to top, #ff512f, #f09819);
       float: right;
-      border: 1px solid white;
+      border: 1px solid rgba(255, 255, 255, 0.8);
       border-radius: 10px;
-      padding: 5px 20px;
+      padding: 5px 30px;
       margin: 0 25px 0 0;
       a{
         width: 100%;
