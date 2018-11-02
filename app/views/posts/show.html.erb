@@ -1,0 +1,13 @@
+<%= render "shared/header" %>
+<div class = "posted_content_show_wrapper">
+  <div class = "posted_content_show">
+    <div class = "posted_content_player">
+      <% if @post.post_type == 'youtube' %>
+        <% url_parts = @post.youtube.gsub('https://www.youtube.com/watch?v=', '').split("&")[0] %>
+        <iframe width="90%" height="90%" src="https://www.youtube.com/embed/<%= url_parts %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <% elsif posted_content.post_type == 'video'%>
+        <%= video_tag(@post.video, width: '90%', height: '90%', :controls => true) %>
+      <% end %>
+    </div>
+  </div>
+</div>

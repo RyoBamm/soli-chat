@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
-  # before_action :set_new_post, only: [:create]
+  before_action :set_post, only: [:show]
 
   def index
+  end
+
+  def show
   end
 
   def new
@@ -31,5 +34,9 @@ class PostsController < ApplicationController
       :post_type,
       :description,
     ).merge(user_id: current_user.id)
+  end
+
+  def set_post
+    @post = Post.includes(:user).find(params[:id])
   end
 end
