@@ -1,2 +1,49 @@
 <%= render "shared/header" %>
-<div class = "new"
+<div class = "posting_new_content">
+  <div class = "posting_content_description">
+    <h3>音楽を投稿する</h3>
+    <p>カラオケ・バンド・DTMなど、あなたの演奏をSoliChatで共有しよう</p>
+  </div>
+  <%= form_for @post do |f| %>
+    <div class = "title_form">
+      <div class = "menu_title">
+        <h3>TITLE</h3>
+        <i class="fas fa-exclamation-triangle">&nbsp;半角100・全角33文字以内&nbsp;&nbsp;/&nbsp;&nbsp;必須</i>
+      </div>
+      <%= f.text_field :title, maxlength: 100 %>
+    </div>
+    <div class = "movie_form">
+      <div class = "menu_title">
+        <h3>MOVIE</h3>
+        <%= f.select :post_type, Post.post_types.keys.to_a, {}, class: 'post_type_selecter' %>
+        <i class="fas fa-exclamation-triangle">&nbsp;タイプを指定してください&nbsp;&nbsp;/&nbsp;&nbsp;必須</i>
+      </div>
+      <div class = "input_video_form">
+        <label for = "post_video">
+          動画を選択する
+          <%= f.file_field :video, :accept => 'video/*', class: "input_file input_file_video" %>
+          <div class = "video_player">
+            <video controls width = "500px" height = "300px"><source src="mov_bbb.mp4" id="input_video_player"></video>
+          </div>
+        </label>
+        <a class = "input_video_name">ファイルが選択されていません</a>
+      </div>
+      <div class = "input_youtube_form">
+        <%= f.url_field :youtube, placeholder: 'YouTubeページのurlを貼り付けてください', class: "input_file input_url_youtube" %>
+        <div class = "youtube_player">
+          <iframe width = "500" height = "300" src = "#" frameborder = "0" allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id = "input_youtube_player"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class = "description_form">
+      <div class = "menu_title">
+        <h3>NOTE</h3>
+      </div>
+      <%= f.text_area :description %>
+    </div>
+<!--     <%= f.submit %> -->
+    <div class = "submitting_post_btn_wrapper">
+      <%= f.button 'POST', type: :submit, class: "submitting_post_btn" %>
+    </div>
+  <% end %>
+</div>

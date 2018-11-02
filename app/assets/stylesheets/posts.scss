@@ -1,4 +1,189 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
+// View :new
+.posting_new_content{
+  min-width: 870px;
+  height: 1500px;
+  background-color: rgb(30, 30, 30);
+  margin-top: 70px;
+  .posting_content_description{
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(-135deg, #E4A972, #9941D8);
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    h3{
+      font-size: 25px;
+      font-weight: bold;
+      padding: 50px 0 0 25px;
+    }
+    p{
+      font-size: 16px;
+      padding-top: 10px;
+    }
+  }
+  .menu_title{
+    width: calc(100% - 40px);
+    height: 100%;
+    color: white;
+    padding: 40px 20px 15px 0;
+    margin: 0 0 10px 20px;
+    border-bottom: 1px solid  #444444;
+    h3{
+      width: 120px;
+      height: 30px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 17px;
+      font-weight: bold;
+      font-family: arial;
+      line-height: 30px;
+      text-align: center;
+      background: linear-gradient(to top, #f2709c, #ff9472);
+      border: 2px solid  rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+      display: inline-block;
+      letter-spacing: 1px;
+      margin-left: 30px;
+    }
+    i{
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0 0 0 20px;
+      display: inline-block;
+      position: relative;
+      top: 2px;
+    }
+    i:before{
+      color: #FFFF44;
+    }
+  }
+  .title_form{
+    input{
+      width: 91%;
+      height: 40px;
+      font-size: 18px;
+      border: 2px solid  #444444;
+      border-radius: 10px;
+      margin: 10px 0 0 50px;
+    }
+    input:focus{
+      border: 2px solid #60EEFF;
+      outline : none;
+    }
+  }
+  .movie_form{
+    margin-top: 40px;
+    .post_type_selecter{
+      width: 100px;
+      height: 30px;
+      font-size: 12px;
+      background: linear-gradient(to top, #abbaab, #ffffff);
+      border: 2px solid  #444444;
+      cursor: pointer;
+      margin-left: 20px;
+    }
+    .post_type_selecter:focus{
+      border: 2px solid #60EEFF;
+      outline : none;
+    }
+    .input_video_form{
+      label{
+        width: 150px;
+        height: 30px;
+        font-size: 16px;
+        background: linear-gradient(to top, #abbaab, #ffffff);
+        display: block;
+        border: 2px solid  #444444;
+        border-radius: 20px;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+        float: left;
+        margin: 20px 0 0 50px;
+        input{
+          display: none;
+        }
+        .video_player{
+          video{
+            border: 2px solid  #444444;
+            clear: both;
+            display: block;
+            margin: 20px 0 20px 0;
+          }
+        }
+      }
+      a{
+        color: white;
+        float: left;
+        margin: 30px 0 0 20px;
+      }
+    }
+    .input_youtube_form{
+      display: none;
+      .input_url_youtube{
+        width: 500px;
+        height: 30px;
+        border: 2px solid  #444444;
+        border-radius: 10px;
+        padding-left: 20px;
+        margin: 20px 0 0 50px;
+      }
+      .input_url_youtube:focus{
+        border: 2px solid #60EEFF;
+        outline : none;
+      }
+      .youtube_player{
+        iframe{
+          border: 2px solid  #444444;
+          clear: both;
+          display: block;
+          margin: 20px 0 20px 50px;
+        }
+      }
+    }
+  }
+  .description_form{
+    clear: both;
+    margin-top: 420px;
+    textarea{
+      width: 91%;
+      height: 160px;
+      font-size: 18px;
+      border: 2px solid  #444444;
+      border-radius: 10px;
+      margin: 10px 0 0 50px;
+    }
+    textarea:focus{
+      border: 2px solid #60EEFF;
+      outline : none;
+    }
+  }
+  .submitting_post_btn_wrapper{
+    width: 100%;
+    text-align: center;
+    .submitting_post_btn{
+      width: 300px;
+      height: 70px;
+      font-size: 25px;
+      font-weight: bold;
+      color: white;
+      background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+      background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+      transition: .4s;
+      border: 2px solid  rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+      letter-spacing: 3px;
+      border-radius: 25px;
+      text-decoration: none;
+      cursor: pointer;
+      margin: 100px 50px;
+    }
+    .submitting_post_btn:hover {
+      background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+      background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+    }
+    .submitting_post_btn:focus{
+      border: 2px solid #60EEFF;
+      outline : none;
+    }
+  }
+}
