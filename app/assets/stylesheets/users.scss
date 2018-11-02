@@ -113,6 +113,7 @@
     }
   }
   .mypage_users_posts{
+    height: 1200px;
     min-height: 600px;
     padding-top: 10px;
     .menu_title{
@@ -140,13 +141,44 @@
       }
     }
     .posted_contents_wrapper{
-      width : calc(100%-30px);
       height: 400px;
+      color: white;
       background-color:  rgba(0, 0, 0, 0.9);
-      margin: 30px;
+      padding: 10px 0 30px;
+      margin: 30px 30px 0 30px;
       .posted_contents{
         padding-top: 1px;
         margin-left: 60px;
+      }
+      .pagination{
+        height: 60px;
+        background-color:  rgba(0, 0, 0, 0.9);
+        clear: both;
+        display: block;
+        text-align: center;
+        padding-top: 10px;
+        li{
+          width: 40px;
+          height: 25px;
+          border: 1px solid white;
+          border-radius: 10px;
+          cursor: pointer;
+          display: inline-block;
+          a{
+            font-size: 8px;
+            font-weight: bold;
+            line-height: 25px;
+            color: white;
+            text-decoration: none;
+            display: block;
+          }
+        }
+        li:hover{
+          background-color: gray;
+        }
+        li.active{
+          background: linear-gradient(to right, #56ccf2, #2f80ed);
+        }
       }
     }
     @media screen and ( max-width:1323px) {

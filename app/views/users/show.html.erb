@@ -56,12 +56,10 @@
     <div class = "posted_contents_wrapper">
       <div class = "posted_contents">
         <div class = "content_wrapper">
-          <%= render "shared/posted_content" %>
-          <%= render "shared/posted_content" %>
-          <%= render "shared/posted_content" %>
-          <%= render "shared/posted_content" %>
+          <%= render partial: 'shared/posted_content', collection: @posts %>
         </div>
       </div>
+        <%= paginate @posts %>
     </div>
   </div>
 </div>
