@@ -1,6 +1,9 @@
 <%= render "shared/header" %>
 <div class = "mypage_wrapper">
   <div class = "mypage_top">
+<!--     <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %> -->
     <div class = "mypage_top__user_icon">
       <%= image_tag current_user.avatar, :size => "250x250", :alt => "user" %>
       <a class = "user_nickname"><%= @user.nickname %></a>

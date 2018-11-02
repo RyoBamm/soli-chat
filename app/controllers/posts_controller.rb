@@ -11,14 +11,13 @@ class PostsController < ApplicationController
   def create
     post = Post.new(post_params)
     if user_signed_in? && current_user.id == post.user_id
-      binding.pry
       if post.save
         redirect_to "/users/#{current_user.id}", notice: '投稿が完了しました'
       else
-        redirect_to new_post_path, notice: 'エラーが発生しました'
+        redirect_to new_post_path, alert: 'エラーが発生しました'
       end
     else
-      redirect_to root_path, notice: 'ログインしてください'
+      redirect_to root_path, alert: 'ログインしてください'
     end
   end
 
