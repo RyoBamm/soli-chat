@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     redirect_to :root unless user_signed_in? && @user.id == current_user.id
 
     @posts = @user.posts.page(params[:page]).per(4).order("created_at DESC")
+    @posts_count = @user.posts.count
 
     respond_to do |format|
       format.html

@@ -1,3 +1,4 @@
+
 <div class = "posted_content">
   <div class = "posted_content__tags">
     <div class = "content_tag">
@@ -6,22 +7,27 @@
     <div class = "other_tags">
       <p>...</p>
     </div>
-    <div class = "created_date">
-      <p>2018/10/23</p>
+    <div class = "created_date"><!--  -->
+      <p><%= posted_content.created_at.strftime("%Y/%m/%d")%></p>
     </div>
   </div>
   <div class = "posted_content__thumbnail">
-    <iframe width="200px" height="200px" src="https://www.youtube.com/embed/8X2td4LtgzQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <% if posted_content.post_type == 'youtube' %>
+      <% url_parts = posted_content.youtube.gsub('https://www.youtube.com/watch?v=', '').split("&")[0] %>
+      <iframe width="200px" height="200px" src="https://www.youtube.com/embed/<%= url_parts %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <% elsif posted_content.post_type == 'video'%>
+      <%= video_tag(posted_content.video, width: '200px', height: '200px', :controls => true) %>
+    <% end %>
   </div>
   <div class = "posted_content__title">
-    <p>Debarge&nbsp;&nbsp;I&nbsp;Like&nbsp;It</p>
+    <p><%= posted_content.title %></p>
   </div>
   <div class = "posted_content__likes">
     <i class="fa fa-heart fa-lg">
       <a>12</a>
     </i>
     <div class = "show_detail">
-      <a>詳細</a>
+      <%= link_to '詳細', post_path(posted_content.id) %>
     </div>
   </div>
 </div>
