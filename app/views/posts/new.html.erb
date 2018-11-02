@@ -15,7 +15,7 @@
     <div class = "movie_form">
       <div class = "menu_title">
         <h3>MOVIE</h3>
-        <%= f.select :type, Post.types.keys.to_a, {}, class: 'post_type_selecter' %>
+        <%= f.select :post_type, Post.post_types.keys.to_a, {}, class: 'post_type_selecter' %>
         <i class="fas fa-exclamation-triangle">&nbsp;タイプを指定してください&nbsp;&nbsp;/&nbsp;&nbsp;必須</i>
       </div>
       <div class = "input_video_form">
@@ -43,7 +43,7 @@
     </div>
 <!--     <%= f.submit %> -->
     <div class = "submitting_post_btn_wrapper">
-      <%= f.button 'SUBMIT', type: :submit, class: "submitting_post_btn" %>
+      <%= f.button 'POST', type: :submit, class: "submitting_post_btn" %>
     </div>
   <% end %>
 </div>
