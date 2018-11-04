@@ -13,7 +13,7 @@
           <a>フォロワー数&nbsp;:&nbsp;100人</a>&nbsp;&nbsp;&nbsp;&nbsp;<a>フォロー数&nbsp;:&nbsp;150人</a>
         </div>
         <div class = "post">
-          <a>投稿数&nbsp;:&nbsp;10件</a>
+          <a>投稿数&nbsp;:&nbsp;<%= @posts_count %>件</a>
           <a>&nbsp;&nbsp;&nbsp; 総いいね&nbsp;:&nbsp;150</a>
           <a >&nbsp;&nbsp;&nbsp; ファン&nbsp;:&nbsp;20人</a>
         </div>
@@ -53,12 +53,10 @@
     <div class = "posted_contents_wrapper">
       <div class = "posted_contents">
         <div class = "content_wrapper">
-          <%= render "shared/posted_content" %>
-          <%= render "shared/posted_content" %>
-          <%= render "shared/posted_content" %>
-          <%= render "shared/posted_content" %>
+          <%= render partial: 'shared/posted_content', collection: @posts %>
         </div>
       </div>
+        <%= paginate @posts %>
     </div>
   </div>
 </div>

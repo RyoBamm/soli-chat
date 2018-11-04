@@ -1,0 +1,56 @@
+<%= render "shared/header" %>
+<div class = "posted_content_show_wrapper">
+  <div class = "posted_content_show">
+    <div class = "posted_content_show__player">
+      <% if @post.post_type == 'youtube' %>
+        <% url_parts = @post.youtube.gsub('https://www.youtube.com/watch?v=', '').split("&")[0] %>
+        <iframe width="90%" height="90%" src="https://www.youtube.com/embed/<%= url_parts %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <% elsif @post.post_type == 'video'%>
+        <%= video_tag(@post.video, width: '90%', height: '90%', :controls => true) %>
+      <% end %>
+    </div>
+    <div class = "posted_content_show__title">
+      <div class = "title">
+        <h3><%= @post.title %></h3>
+        <% if current_user.id == @post.user_id %>
+          <i class="fa fa-cog fa-1x">
+            <a>削除</a>
+            <a>編集</a>
+          </i>
+        <% end %>
+      </div>
+      <div class = "likes">
+        <div class = "float_left_wrapper">
+          <a class = "play_count">
+            1,000&nbsp;回視聴
+          </a>
+          <i class="fa fa-heart fa-1x">
+            <a>12&nbsp;likes</a>
+          </i>
+<!--           <i class="fas fa-thumbs-up">&nbsp;&nbsp;&nbsp;60</i>
+          <i class="fas fa-thumbs-down">&nbsp;&nbsp;&nbsp;25</i> -->
+        </div>
+        <div class = "float_right_wrapper">
+          <div class = "user_icon_wrapper">
+            <%= image_tag @post.user.avatar, :size => "40x40", :alt => "user" %>
+          </div>
+          <div class = "user_info_wrapper">
+            <a class = "user_nickname"><%= @post.user.nickname %></a>
+            <a class ="posted_date">
+              <%= @post.created_at.strftime("%Y/%m/%d") %>&nbsp;に公開
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class = "posted_content_show__note">
+      <h3>NOTE</h3>
+      <p>
+        <%= @post.description %>
+      </p>
+    </div>
+    <div class = "posted_content_show__comment">
+      <h3>COMMENT</h3>
+    </div>
+  </div>
+</div>

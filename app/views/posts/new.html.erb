@@ -1,5 +1,8 @@
 <%= render "shared/header" %>
 <div class = "posting_new_content">
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
   <div class = "posting_content_description">
     <h3>音楽を投稿する</h3>
     <p>カラオケ・バンド・DTMなど、あなたの演奏をSoliChatで共有しよう</p>

@@ -5,19 +5,14 @@ class Post < ApplicationRecord
 
   enum post_type: %i(video youtube)
 
-  validates :title,
-            :post_type,
-            :user_id,
-            presence: true, if: :require_validation?
+  validates :title, :post_type, :user_id, presence: true
+  validate :posts_deplication_checker
 
-  def require_validation?
-    if :video.present? && :youtube.blank?
-      return true
-    elsif :youtube.present? && :video.blank?
-      return true
-    else
-      return false
+  def posts_deplication_checker
+    if video.present? && youtube.present?
+      errors[:base] << "コンテンツが重複しています"
+    elsif youtube.blank? && video.blank?
+      errors[:base] << "コンテンツがありません"
     end
   end
-
 end
