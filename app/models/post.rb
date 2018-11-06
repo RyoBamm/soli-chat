@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :likes, dependent: :destroy
 
   mount_uploader :video, VideoUploader
 
@@ -14,5 +15,9 @@ class Post < ApplicationRecord
     elsif youtube.blank? && video.blank?
       errors[:base] << "コンテンツがありません"
     end
+  end
+
+  def like_user(user_id)
+   likes.find_by(user_id: user_id)
   end
 end
