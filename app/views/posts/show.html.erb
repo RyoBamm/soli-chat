@@ -1,5 +1,8 @@
 <%= render "shared/header" %>
 <div class = "posted_content_show_wrapper">
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
   <div class = "posted_content_show">
     <div class = "posted_content_show__player">
       <% if @post.post_type == 'youtube' %>
@@ -14,8 +17,8 @@
         <h3><%= @post.title %></h3>
         <% if current_user.id == @post.user_id %>
           <i class="fa fa-cog fa-1x">
-            <a>削除</a>
-            <a>編集</a>
+            <%= link_to '削除', "/posts/#{@post.id}", method: :delete, class: "delete_post_btn post_btn", data: { confirm: 'この投稿を削除しますか?' } %>
+            <%= link_to '編集', edit_post_path(@post.id), class: "edit_post_btn post_btn" %>
           </i>
         <% end %>
       </div>

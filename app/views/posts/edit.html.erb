@@ -1,0 +1,43 @@
+<%= render "shared/header" %>
+<div class = "posting_new_content">
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
+  <div class = "posting_content_description">
+    <h3>投稿を編集する</h3>
+    <p>カラオケ・バンド・DTMなど、あなたの演奏をSoliChatで共有しよう</p>
+  </div>
+  <%= form_for @post do |f| %>
+    <div class = "title_form">
+      <div class = "menu_title">
+        <h3>TITLE</h3>
+        <i class="fas fa-exclamation-triangle">&nbsp;半角100・全角33文字以内&nbsp;&nbsp;/&nbsp;&nbsp;必須</i>
+      </div>
+      <%= f.text_field :title, maxlength: 100 %>
+    </div>
+    <div class = "movie_form">
+      <div class = "menu_title">
+        <h3>MOVIE</h3>
+        <i class="fas fa-exclamation-triangle">&nbsp;演奏は編集出来ません</i>
+      </div>
+      <div class = "edit_music_player video_player">
+        <% if @post.post_type == 'youtube' %>
+          <% url_parts = @post.youtube.gsub('https://www.youtube.com/watch?v=', '').split("&")[0] %>
+          <iframe width="500" height="300" src="https://www.youtube.com/embed/<%= url_parts %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <% elsif @post.post_type == 'video'%>
+          <%= video_tag(@post.video, width: '500', height: '300', :controls => true) %>
+        <% end %>
+      </div>
+    </div>
+    <div class = "edit_description_form">
+      <div class = "menu_title">
+        <h3>NOTE</h3>
+      </div>
+      <%= f.text_area :description %>
+    </div>
+<!--     <%= f.submit %> -->
+    <div class = "submitting_post_btn_wrapper">
+      <%= f.button 'EDIT', type: :submit, class: "submitting_post_btn" %>
+    </div>
+  <% end %>
+</div>

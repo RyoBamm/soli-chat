@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show]
+  before_action :set_post_including_user, only: [:show]
+  before_action :set_post, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -24,8 +25,31 @@ class PostsController < ApplicationController
     end
   end
 
-  private
+  def edit
+  end
 
+  def update
+    if user_signed_in? && current_user.id == @post.user_id
+      # binding.pry
+      if @post.update(post_params)
+        redirect_to post_path(@post.id), notice: '投稿を編集しました'
+      else
+        redirect_to post_path(@post.id), notice: '編集に失敗しました'
+      end
+    end
+  end
+
+  def destroy
+    if user_signed_in? && current_user.id == @post.user_id
+      if @post.destroy
+        redirect_to "/users/#{current_user.id}", notice: '投稿を削除しました'
+      else
+        redirect_to post_path(post.id), notice: '削除に失敗しました'
+      end
+    end
+  end
+
+  private
   def post_params
     params.require(:post).permit(
       :title,
@@ -37,6 +61,10 @@ class PostsController < ApplicationController
   end
 
   def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def set_post_including_user
     @post = Post.includes(:user).find(params[:id])
   end
 end
