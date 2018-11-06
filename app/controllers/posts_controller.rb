@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post_including_user, only: [:show]
-  before_action :set_post, only: [:destroy]
+  before_action :set_post, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -22,6 +22,20 @@ class PostsController < ApplicationController
       end
     else
       redirect_to root_path, alert: 'ログインしてください'
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if user_signed_in? && current_user.id == @post.user_id
+      # binding.pry
+      if @post.update(post_params)
+        redirect_to post_path(@post.id), notice: '投稿を編集しました'
+      else
+        redirect_to post_path(@post.id), notice: '編集に失敗しました'
+      end
     end
   end
 

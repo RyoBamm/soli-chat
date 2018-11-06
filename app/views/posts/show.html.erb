@@ -17,8 +17,8 @@
         <h3><%= @post.title %></h3>
         <% if current_user.id == @post.user_id %>
           <i class="fa fa-cog fa-1x">
-            <%= link_to '削除', "/posts/#{@post.id}", method: :delete, class: "delete_post_btn", data: { confirm: 'この投稿を削除しますか?' } %>
-            <a>編集</a>
+            <%= link_to '削除', "/posts/#{@post.id}", method: :delete, class: "delete_post_btn post_btn", data: { confirm: 'この投稿を削除しますか?' } %>
+            <%= link_to '編集', edit_post_path(@post.id), class: "edit_post_btn post_btn" %>
           </i>
         <% end %>
       </div>

@@ -49,6 +49,13 @@
             color: white;
             text-decoration: none;
           }
+          .edit_post_btn{
+            color: white;
+            text-decoration: none;
+          }
+          .post_btn:hover{
+            color: #38ef7d;
+          }
         }
       }
       .likes{
@@ -373,3 +380,44 @@
     }
   }
 }
+
+
+// View:edit
+.edit_music_player{
+  margin: 20px 0 0 50px;
+}
+
+.edit_description_form{
+  clear: both;
+  margin-top: 130px;
+  textarea{
+    width: 91%;
+    height: 160px;
+    font-size: 18px;
+    border: 2px solid  #444444;
+    border-radius: 10px;
+    margin: 10px 0 0 50px;
+  }
+  textarea:focus{
+  border: 2px solid #60EEFF;
+  outline : none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
