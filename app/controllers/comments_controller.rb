@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update]
 
   def show
-    # @comment = Comment.includes(:user).find(comment_params[:id])
   end
 
   def create
@@ -14,11 +13,9 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    # @comment = Comment.includes(:user).find(comment_params[:id])
   end
 
   def update
-    # @comment = Comment.find(comment_params[:id])
     if user_signed_in? && @comment.user_id == current_user.id
       @comment.update( content: comment_params[:content] )
     end
@@ -37,6 +34,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.permit(:id, :comment, :post_id).merge(user_id: current_user.id)
+    params.require(:comment).permit(:id, :comment).merge(user_id: current_user.id).merge(post_id: params[:post_id])
   end
 end

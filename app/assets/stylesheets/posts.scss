@@ -61,6 +61,7 @@
       .likes{
         width: 100%;
         height: 60px;
+        margin-top: 3px;
         .float_left_wrapper{
           height: 100%;
           float: left;
@@ -200,6 +201,45 @@
         display: inline-block;
         letter-spacing: 1px;
         margin-left: 20px;
+      }
+      .comment_form_wrapper{
+        line-height: 74px;
+        margin: 30px 0 0 20px;
+        textarea{
+          // width: 630px;
+          width: calc(100% - 180px);
+          max-width: 870px;
+          height: 60px;
+          font-size: 18px;
+          float: left;
+          resize: none;
+          border: 2px solid gray;
+          border-radius: 10px;
+          padding: 5px 10px;
+        }
+        textarea:focus{
+          text-decoration: none;
+          outline: none;
+          border: 2px solid #60EEFF;
+        }
+        button{
+          width: 100px;
+          height: 40px;
+          font-size: 17px;
+          color: white;
+          background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+          border: 2px solid gray;
+          border-radius: 15px;
+          cursor: pointer;
+          outline: none;
+          margin-left: 40px;
+        }
+        button:hover{
+          background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+        }
+        button:active{
+          outline: none;
+        }
       }
     }
   }
@@ -388,7 +428,6 @@
       margin: 100px 50px;
     }
     .submitting_post_btn:hover {
-      background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
       background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
     }
     .submitting_post_btn:focus{
@@ -416,8 +455,8 @@
     margin: 10px 0 0 50px;
   }
   textarea:focus{
-  border: 2px solid #60EEFF;
-  outline : none;
+    border: 2px solid #60EEFF;
+    outline : none;
   }
 }
 

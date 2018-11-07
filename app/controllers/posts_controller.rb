@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   def show
     @likes = Like.where(post_id: params[:post_id])
     @like = Like.find_by(user_id: current_user.id, post_id: params[:id])
+    @comment = Comment.new()
   end
 
   def new
