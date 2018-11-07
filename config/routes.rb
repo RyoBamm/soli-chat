@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'posts#index'
   get   'users/:id'   =>  'users#show'
   resources :posts do
-    resources :likes
+    resources :comments, only: [:show, :create, :edit, :update, :destroy]
+    resources :likes, only: [:create, :destroy]
   end
 end
