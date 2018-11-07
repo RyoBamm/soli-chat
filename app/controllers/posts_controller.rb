@@ -1,11 +1,14 @@
 class PostsController < ApplicationController
   before_action :set_post_including_user, only: [:show]
   before_action :set_post, only: [:edit, :update, :destroy]
+  # before_action :set_likes, only: [:show]
 
   def index
   end
 
   def show
+    @likes = Like.where(post_id: params[:post_id])
+    @like = Like.find_by(user_id: current_user.id, post_id: params[:id])
   end
 
   def new
@@ -67,4 +70,8 @@ class PostsController < ApplicationController
   def set_post_including_user
     @post = Post.includes(:user).find(params[:id])
   end
+
+  # def set_likes
+  #   @likes = Like.where(post_id: params[:post_id])
+  # end
 end

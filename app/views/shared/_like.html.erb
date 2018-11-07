@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  <% if post.like_user(current_user.id) %>
+    <%= link_to " #{post.likes_count} likes", "/posts/#{post.id}/likes/#{like.id}", method: :delete, class: "fa fa-heart fa-1x like_btn  active_like", remote: :true %>
+  <% else %>
+    <%= link_to " #{post.likes_count} likes", post_likes_path(post.id), method: :post, class: "fa fa-heart fa-1x like_btn", remote: :true %>
+  <% end %>
+<% else %>
+  <a class = "fa fa-heart fa-1x"><%= " #{post.likes_count} likes" %></a>
+<% end %>
