@@ -1,4 +1,4 @@
 class Like < ApplicationRecord
-  has_many :posts, counter_cache: :likes_count
-  has_many :users
+  belongs_to :post, optional: true, counter_cache: :likes_count
+  belongs_to :user, optional: true
 end
