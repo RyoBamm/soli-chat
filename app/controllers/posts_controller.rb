@@ -11,6 +11,10 @@ class PostsController < ApplicationController
     @like = Like.find_by(user_id: current_user.id, post_id: params[:id])
     @comments = @post.comments.page(params[:page]).per(5).order("created_at DESC")
     @comment = Comment.new()
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
