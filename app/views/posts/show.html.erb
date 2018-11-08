@@ -60,6 +60,9 @@
           <%= f.button 'POST', type: :submit, remote: :true, class: "submitting_comment_btn" %>
         <% end %>
       </div>
+      <div class = "showing_comments_field">
+        <%= render partial: 'shared/comment', collection: @post.comments.reverse_order %>
+      </div>
     </div>
   </div>
 </div>
