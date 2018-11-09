@@ -4,18 +4,18 @@
     <div class = "mypage_top__user_icon">
       <%= image_tag current_user.avatar, :size => "250x250", :alt => "user" %>
       <a class = "user_nickname"><%= @user.nickname %></a>
-      <a class = "user_userid">ID: 100ac438</a>
+      <a class = "user_userid">ID: <%= @user.id %></a>
     </div>
     <div class = "mypage_top__user_menu">
       <div class = "user_menu_wrapper user_data" >
         <p class = "menu_title">DATA</p>
         <div class = "follow">
-          <a>フォロワー数&nbsp;:&nbsp;100人</a>&nbsp;&nbsp;&nbsp;&nbsp;<a>フォロー数&nbsp;:&nbsp;150人</a>
+          <a>フォロワー数&nbsp;:&nbsp;X人</a>&nbsp;&nbsp;&nbsp;&nbsp;<a>フォロー数&nbsp;:&nbsp;X人</a>
         </div>
         <div class = "post">
-          <a>投稿数&nbsp;:&nbsp;<%= @posts_count %>件</a>
-          <a>&nbsp;&nbsp;&nbsp; 総いいね&nbsp;:&nbsp;150</a>
-          <a >&nbsp;&nbsp;&nbsp; ファン&nbsp;:&nbsp;20人</a>
+          <a>投稿数&nbsp;:&nbsp;<%= @user_info[:posts_count] %>件</a>
+          <a>&nbsp;&nbsp;&nbsp; Like数&nbsp;:&nbsp;<%= @user_info[:all_likes] %>件</a>
+<!--           <a >&nbsp;&nbsp;&nbsp; ファン&nbsp;:&nbsp;20人</a> -->
         </div>
       </div>
       <div class = "user_menu_wrapper areaTags">
