@@ -1,1 +1,5 @@
-$(".showing_comments_field").html(`<%= render partial: 'shared/comment', collection: @comments %><%= paginate @comments, remote: true %>`);
+$(".showing_comments_field").html(
+ `<div class = "showing_comments_wrapper">
+    <%= render partial: 'shared/comment', collection: @comments %>
+  </div>
+  <%= paginate @comments, remote: true %>`);

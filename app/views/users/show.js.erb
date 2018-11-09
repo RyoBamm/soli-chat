@@ -1,0 +1,7 @@
+$(".posted_contents_wrapper").html(
+ `<div class = "posted_contents">
+    <div class = "content_wrapper">
+      <%= render partial: 'shared/posted_content', collection: @posts %>
+    </div>
+  </div>
+  <%= paginate @posts, remote: true %>`);

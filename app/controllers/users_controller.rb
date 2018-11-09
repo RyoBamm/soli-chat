@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-# Modelnないため仮置き。ToDo:concern lib化
+# [メモ]  Modelがないため仮置き。ToDo:concern lib化
   def total_likes_count(user_id)
     posts = User.find(user_id).posts
     total_likes_count = 0

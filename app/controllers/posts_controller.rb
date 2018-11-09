@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
     if user_signed_in? && current_user.id == post.user_id
       if post.save
-        redirect_to "/users/#{current_user.id}", notice: '投稿が完了しました'
+        redirect_to "/posts/#{post.id}", notice: '投稿が完了しました'
       else
         redirect_to new_post_path, alert: 'エラーが発生しました'
       end
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
   def destroy
     if user_signed_in? && current_user.id == @post.user_id
       if @post.destroy
-        redirect_to "/users/#{current_user.id}", notice: '投稿を削除しました'
+        redirect_to "/users/#{current_user.id}"
       else
         redirect_to post_path(post.id), notice: '削除に失敗しました'
       end

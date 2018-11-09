@@ -14,7 +14,7 @@
         </div>
         <div class = "post">
           <a>投稿数&nbsp;:&nbsp;<%= @user_info[:posts_count] %>件</a>
-          <a>&nbsp;&nbsp;&nbsp; Like数&nbsp;:&nbsp;<%= @user_info[:all_likes] %>件</a>
+          <a>&nbsp;&nbsp;&nbsp; like数&nbsp;:&nbsp;<%= @user_info[:all_likes] %>likes</a>
 <!--           <a >&nbsp;&nbsp;&nbsp; ファン&nbsp;:&nbsp;20人</a> -->
         </div>
       </div>
@@ -56,7 +56,7 @@
           <%= render partial: 'shared/posted_content', collection: @posts %>
         </div>
       </div>
-        <%= paginate @posts %>
+      <%= paginate @posts, remote: true %>
     </div>
   </div>
 </div>
