@@ -1,7 +1,7 @@
 $(function(){
 // $(document).on('turbolinks:load', function() {
 
-  // 各種HTMLを作成
+  // コメント表示画面のHTMLを作成
   function buildHTML(comment){
     var html =
  `<p class = "comment_text">${comment.comment}</p>
@@ -10,6 +10,7 @@ $(function(){
     return html;
   }
 
+  // コメント編集画面のHTMLを作成
   function buildEditHTML(comment){
     var html =
  `<textarea class="edit_comment_area">${comment.comment}</textarea>
