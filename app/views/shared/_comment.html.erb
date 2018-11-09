@@ -7,9 +7,7 @@
     </p>
   </div>
   <div class = "comment_wrapper__right" id = <%="comment_#{comment.id}" %>>
-    <p class = "comment_text">
-      <%= comment.comment %>
-    </p>
+    <p class = "comment_text"><%= "#{comment.comment}" %></p>
     <% if user_signed_in? && current_user.id == comment.user_id %>
       <%= link_to "", "/posts/#{comment.post_id}/comments/#{comment.id}/edit", class: 'comment_edit_btn fas fa-cog' %>
     <% end %>

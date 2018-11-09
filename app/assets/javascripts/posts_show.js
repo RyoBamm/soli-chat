@@ -4,9 +4,7 @@ $(function(){
   // 各種HTMLを作成
   function buildHTML(comment){
     var html =
- `<p class = "comment_text">
-      ${comment.comment}
-  </p>
+ `<p class = "comment_text">${comment.comment}</p>
   <a href = "/posts/${comment.post_id}/comments/${comment.id}/edit" class = 'comment_edit_btn fas fa-cog' >
   </a>`
     return html;
@@ -14,9 +12,7 @@ $(function(){
 
   function buildEditHTML(comment){
     var html =
- `<textarea class="edit_comment_area">
-    ${comment.comment}
-  </textarea>
+ `<textarea class="edit_comment_area">${comment.comment}</textarea>
   <div class = "edit_box_btns_wrapper">
     <a class="edit_box_btn comment_cancel_btn" href="/posts/${comment.post_id}/comments/${comment.id}">Cancel</a>
     <a class="edit_box_btn comment_delete_btn" href="/posts/${comment.post_id}/comments/${comment.id}" data-confirm="このコメントを削除しますか？" data-method="delete">Delete</a>
@@ -61,7 +57,7 @@ $(function(){
   $(document).on('click', '.comment_update_btn', function(e){
     e.preventDefault();
     var celectedArea = $(this).parent().parent().find(".edit_comment_area");
-    var wordCount = $(".edit_comment_area").val().length;
+    var wordCount = $(celectedArea).val().replace(/\s+/g,'').length;
     if (wordCount != 0){
       var url = $(this).attr('href');
       var updateComment = $(celectedArea).val();
