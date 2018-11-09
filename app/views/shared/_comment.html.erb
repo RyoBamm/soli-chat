@@ -11,7 +11,7 @@
       <%= comment.comment %>
     </p>
     <% if user_signed_in? && current_user.id == comment.user_id %>
-      <%= link_to "", "", class: 'comment_edit_btn fas fa-cog' %>
+      <%= link_to "", "/posts/#{comment.post_id}/comments/#{comment.id}/edit", class: 'comment_edit_btn fas fa-cog' %>
     <% end %>
   </div>
 </div>
