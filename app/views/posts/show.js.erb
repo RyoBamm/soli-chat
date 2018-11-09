@@ -1,0 +1,1 @@
+$(".showing_comments_field").html(`<%= render partial: 'shared/comment', collection: @comments %><%= paginate @comments, remote: true %>`);
