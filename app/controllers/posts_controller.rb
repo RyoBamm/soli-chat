@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   # before_action :set_likes, only: [:show]
 
   def index
+    @all_posts = Post.includes(:categories).page(params[:page]).per(8).order("created_at DESC")
     @recommended_posts = Post.order('likes_count DESC').limit(10)
   end
 
