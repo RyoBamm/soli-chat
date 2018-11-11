@@ -18,13 +18,16 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = Post.includes(:post_categories).new
   end
 
   def create
     post = Post.new(post_params)
     if user_signed_in? && current_user.id == post.user_id
       if post.save
+        params[:post][:category_ids].each do |category_id|
+          PostCategory.create(category_id: category_id, post_id: post.id)
+        end
         redirect_to "/posts/#{post.id}", notice: '投稿が完了しました'
       else
         redirect_to new_post_path, alert: 'エラーが発生しました'
