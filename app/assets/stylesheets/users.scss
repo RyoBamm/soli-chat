@@ -58,9 +58,19 @@
         letter-spacing: 1px;
       }
       .user_menu_wrapper.user_data{
-        margin: 30px 0 10px 5%;
+        margin: 20px 0 10px 5%;
+        .menu_title_data{
+          float: left
+        }
+        .fa-cog{
+          color: white;
+          text-decoration: none;
+          float: right;
+          margin-right: 30px;
+        }
         .follow{
           font-size: 18px;
+          clear: both;
         }
         .post{
           margin-top: 15px;
@@ -105,7 +115,7 @@
           width: 93%;
           min-width: 350px;
           height: 150px;
-          // background-color: rgba(10, 10, 10, 0.6);
+          background-color: rgba(10, 10, 10, 0.4);
           border: 0.5px solid rgba(255, 255, 255, 0.5);
           border-radius: 10px;
           padding: 10px;
@@ -204,3 +214,28 @@
     }
   }
 }
+
+
+.edit_user_info_field_wrapper{
+  margin-top: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   private
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.includes(:prefecture).find(params[:id])
   end
 
 # [メモ]  Modelがないため仮置き。ToDo:concern lib化

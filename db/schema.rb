@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181109101312) do
+ActiveRecord::Schema.define(version: 20181110194741) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "comment", null: false
@@ -44,6 +44,12 @@ ActiveRecord::Schema.define(version: 20181109101312) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "prefectures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "prefecture", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -55,7 +61,10 @@ ActiveRecord::Schema.define(version: 20181109101312) do
     t.string "nickname"
     t.integer "age"
     t.string "avatar"
+    t.text "profile"
+    t.bigint "prefecture_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["prefecture_id"], name: "index_users_on_prefecture_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -64,4 +73,5 @@ ActiveRecord::Schema.define(version: 20181109101312) do
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "users", "prefectures"
 end

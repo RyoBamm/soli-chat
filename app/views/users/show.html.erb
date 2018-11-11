@@ -8,7 +8,8 @@
     </div>
     <div class = "mypage_top__user_menu">
       <div class = "user_menu_wrapper user_data" >
-        <p class = "menu_title">DATA</p>
+        <p class = "menu_title menu_title_data">DATA</p>
+        <a class = "fas fa-cog" href = "/users/edit"></a>
         <div class = "follow">
           <a>フォロワー数&nbsp;:&nbsp;X人</a>&nbsp;&nbsp;&nbsp;&nbsp;<a>フォロー数&nbsp;:&nbsp;X人</a>
         </div>
@@ -22,20 +23,22 @@
         <p class = "menu_title">TAGS</p>
         <div class = "area_tags_wrapper">
           <div class = "area_tags">
-            <a class = "user_area_tag user_tag">東京都</a>
-            <a class = "user_area_tag user_tag">渋谷区</a>
+            <a class = "user_area_tag user_tag"><%= @user.prefecture.prefecture %></a>
+<!--             <a class = "user_area_tag user_tag">渋谷区</a> -->
           </div>
           <div class = "music_tags">
-            <a class = "user_music_tag user_tag">カラオケ</a>
+<!--             <a class = "user_music_tag user_tag">カラオケ</a>
             <a class = "user_music_tag user_tag">DTM</a>
             <a class = "user_music_tag user_tag">ギター</a>
-            <a class = "user_music_tag user_tag">作曲</a>
+            <a class = "user_music_tag user_tag">作曲</a> -->
           </div>
         </div>
       </div>
       <div class = "user_menu_wrapper profile">
         <p class = "menu_title">PROFILE</p>
-        <p class = "profile_content">カラオケ特訓中、都内在住の会社員25歳です。<br>一緒に練習できるカラオケ仲間・先生を募集中です!</p>
+        <pre>
+          <p class = "profile_content"><%= @user.profile %></p>
+        </pre>
       </div>
     </div>
   </div>
