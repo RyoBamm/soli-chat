@@ -1,6 +1,6 @@
 <div class = "top_title_content">
   <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: "#{key}") %>
+    <%= content_tag(:div, value, class: "#{key}", id: "index_flash_message") %>
   <% end %>
   <div class = "top_title_content_message">
     <h3>オススメの投稿</h3>

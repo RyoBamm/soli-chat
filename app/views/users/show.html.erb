@@ -23,8 +23,10 @@
         <p class = "menu_title">TAGS</p>
         <div class = "area_tags_wrapper">
           <div class = "area_tags">
-            <a class = "user_area_tag user_tag"><%= @user.prefecture.prefecture %></a>
+            <% if @user.prefecture %>
+              <a class = "user_area_tag user_tag"><%= @user.prefecture.prefecture %></a>
 <!--             <a class = "user_area_tag user_tag">渋谷区</a> -->
+            <% end %>
           </div>
           <div class = "music_tags">
 <!--             <a class = "user_music_tag user_tag">カラオケ</a>
