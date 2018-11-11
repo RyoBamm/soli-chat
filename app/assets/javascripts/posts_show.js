@@ -16,7 +16,7 @@ $(function(){
  `<textarea class="edit_comment_area">${comment.comment}</textarea>
   <div class = "edit_box_btns_wrapper">
     <a class="edit_box_btn comment_cancel_btn" href="/posts/${comment.post_id}/comments/${comment.id}">Cancel</a>
-    <a class="edit_box_btn comment_delete_btn" href="/posts/${comment.post_id}/comments/${comment.id}" data-confirm="このコメントを削除しますか？" data-method="delete">Delete</a>
+    <a class="edit_box_btn comment_delete_btn" href="/posts/${comment.post_id}/comments/${comment.id}" data-confirm="このコメントを削除しますか？" data-method="delete" data-remote="true">Delete</a>
     <a class="edit_box_btn comment_update_btn" href="/posts/${comment.post_id}/comments/${comment.id}">Update</a>
   </div>`
     return html;

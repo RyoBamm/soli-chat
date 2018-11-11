@@ -34,4 +34,30 @@ $(function(){
     var customized_youtube_url = $('.input_url_youtube').val().replace('https://www.youtube.com/watch?v=', '') .split('&')[0];
     $('#input_youtube_player')[0].src = "https://www.youtube.com/embed/" + customized_youtube_url;
   });
+
+  // category_selecter変更時の処理
+  $(document).on("change", '.category_selecter', function() {
+    $('.category_selecter').css('display', 'inline-block');
+    if ($('.category_selecter1 option:selected').val() == "" || !$('.category_selecter1 option:selected').length){
+      $('.category_selecter2').css('display', 'none');
+      $('.category_selecter2').attr("checked",false);
+      $(".category_selecter2 option").attr("selected",false);
+      $('.category_selecter3').css('display', 'none');
+      $('.category_selecter3').attr("checked",false);
+      $(".category_selecter3 option").attr("selected",false);
+    }
+    if ($('.category_selecter2 option:selected').val() == "" || !$('.category_selecter2 option:selected').length ){
+      $('.category_selecter3').css('display', 'none');
+      $('.category_selecter3').attr("checked",false);
+      $(".category_selecter3 option").attr("selected",false);
+    }
+  });
+
+  // category_selecter2,3の初期化
+  $(document).ready( function(){
+    $('.category_selecter2').attr("checked",false);
+    $(".category_selecter2 option").attr("selected",false);
+    $('.category_selecter3').attr("checked",false);
+    $(".category_selecter3 option").attr("selected",false);
+  });
 });

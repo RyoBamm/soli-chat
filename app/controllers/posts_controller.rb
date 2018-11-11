@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   # before_action :set_likes, only: [:show]
 
   def index
+    @all_posts = Post.includes(:categories).page(params[:page]).per(8).order("created_at DESC")
+    @recommended_posts = Post.order('likes_count DESC').limit(10)
   end
 
   def show
@@ -18,14 +20,17 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = Post.includes(:post_categories).new
   end
 
   def create
     post = Post.new(post_params)
     if user_signed_in? && current_user.id == post.user_id
       if post.save
-        redirect_to "/users/#{current_user.id}", notice: '投稿が完了しました'
+        params[:post][:category_ids].each do |category_id|
+          PostCategory.create(category_id: category_id, post_id: post.id)
+        end
+        redirect_to "/posts/#{post.id}", notice: '投稿が完了しました'
       else
         redirect_to new_post_path, alert: 'エラーが発生しました'
       end
@@ -39,8 +44,16 @@ class PostsController < ApplicationController
 
   def update
     if user_signed_in? && current_user.id == @post.user_id
-      # binding.pry
       if @post.update(post_params)
+        if @post.post_categories
+          @post.post_categories.each do |post_category|
+            deleting_post_category = PostCategory.find(post_category.id)
+            deleting_post_category.destroy
+          end
+        end
+        params[:post][:category_ids].each do |category_id|
+          PostCategory.create(category_id: category_id, post_id: @post.id)
+        end
         redirect_to post_path(@post.id), notice: '投稿を編集しました'
       else
         redirect_to post_path(@post.id), notice: '編集に失敗しました'
@@ -51,7 +64,7 @@ class PostsController < ApplicationController
   def destroy
     if user_signed_in? && current_user.id == @post.user_id
       if @post.destroy
-        redirect_to "/users/#{current_user.id}", notice: '投稿を削除しました'
+        redirect_to "/users/#{current_user.id}"
       else
         redirect_to post_path(post.id), notice: '削除に失敗しました'
       end
@@ -74,7 +87,7 @@ class PostsController < ApplicationController
   end
 
   def set_post_including_user
-    @post = Post.includes(:user).find(params[:id])
+    @post = Post.includes([:user, :categories]).find(params[:id])
   end
 
   # def set_likes

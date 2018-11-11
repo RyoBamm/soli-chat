@@ -1,0 +1,19 @@
+// textareaのvalを空にする
+$(".comment_form_textarea").val('');
+
+// コメント表示部とページネーションのビューを更新
+$(".showing_comments_field").html(
+ `<div class = "showing_comments_wrapper">
+    <%= render partial: 'shared/comment', collection: @comments %>
+  </div>
+  <%= paginate @comments, remote: true %>`);
+
+// paginationのhrefをそれぞれ組み替え
+$(".pagination").find('li').each(function(){
+  var href = $(this).children('a').attr("href");
+  if(href.indexOf("page=")>=0){
+    var strTail = href.substring(href.indexOf("page="),href.length);
+    var strHead = href.substring(0,href.indexOf("/comments?button="));
+  }
+  $(this).children('a').attr("href", strHead + '?' + strTail);
+});

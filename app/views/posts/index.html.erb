@@ -1,2 +1,22 @@
 <%= render "shared/header" %>
 <%= render "shared/top_title_content" %>
+<div class = "index_contents_wrapper">
+  <div class = "index_menu_title">
+    <h3>
+      みんなの投稿一覧
+      <select class="posts_sort_select">
+        <option value="new">新着順</option>
+        <option value="old">投稿順</option>
+        <option value="like">いいね数</option>
+      </select>
+    </h3>
+  </div>
+  <div class = "posted_contents_wrapper">
+    <div class = "posted_contents">
+      <div class = "content_wrapper">
+        <%= render partial: 'shared/posted_content', collection: @all_posts %>
+      </div>
+    </div>
+    <%= paginate @all_posts, remote: true %>
+  </div>
+</div>

@@ -44,6 +44,16 @@
       </div>
       <%= f.text_area :description %>
     </div>
+    <div class = "categories_form">
+      <div class = "menu_title">
+        <h3>CATEGORY</h3>
+      </div>
+      <div class = "category_selecters_wrapper">
+        <%= f.collection_select :category_ids ,Category.all, :id, :category, {prompt: "---", include_hidden: false}, {class: "category_selecter category_selecter1", multiple: true} %>
+        <%= f.collection_select :category_ids ,Category.all, :id, :category, {prompt: "---", include_hidden: false}, {class: "category_selecter category_selecter2", multiple: true} %>
+        <%= f.collection_select :category_ids ,Category.all, :id, :category, {prompt: "---", include_hidden: false}, {class: "category_selecter category_selecter3", multiple: true} %>
+      </div>
+    </div>
 <!--     <%= f.submit %> -->
     <div class = "submitting_post_btn_wrapper">
       <%= f.button 'POST', type: :submit, class: "submitting_post_btn" %>

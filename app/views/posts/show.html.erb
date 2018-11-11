@@ -52,16 +52,26 @@
         <%= @post.description %>
       </p>
     </div>
+    <div class = "posted_content_show__category">
+      <h3>CATEGORY</h3>
+      <p>
+        <% @post.categories.each do |category| %>
+          <a class = "post_category_tag"><%= category.category %></a>
+        <% end %>
+      </p>
+    </div>
     <div class = "posted_content_show__comment">
       <h3>COMMENT</h3>
       <div class = "comment_form_wrapper">
-        <%= form_for [@post, @comment] do |f| %>
+        <%= form_for [@post, @comment], data: { remote: true } do |f| %>
           <%= f.text_area :comment, class: "comment_form_textarea" %>
           <%= f.button 'POST', type: :submit, class: "submitting_comment_btn" %>
         <% end %>
       </div>
       <div class = "showing_comments_field">
-        <%= render partial: 'shared/comment', collection: @comments %>
+        <div class = "showing_comments_wrapper">
+          <%= render partial: 'shared/comment', collection: @comments %>
+        </div>
         <%= paginate @comments, remote: true %>
       </div>
     </div>
