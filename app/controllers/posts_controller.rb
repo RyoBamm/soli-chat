@@ -42,8 +42,16 @@ class PostsController < ApplicationController
 
   def update
     if user_signed_in? && current_user.id == @post.user_id
-      # binding.pry
       if @post.update(post_params)
+        if @post.post_categories
+          @post.post_categories.each do |post_category|
+            deleting_post_category = PostCategory.find(post_category.id)
+            deleting_post_category.destroy
+          end
+        end
+        params[:post][:category_ids].each do |category_id|
+          PostCategory.create(category_id: category_id, post_id: @post.id)
+        end
         redirect_to post_path(@post.id), notice: '投稿を編集しました'
       else
         redirect_to post_path(@post.id), notice: '編集に失敗しました'
@@ -77,7 +85,7 @@ class PostsController < ApplicationController
   end
 
   def set_post_including_user
-    @post = Post.includes(:user).find(params[:id])
+    @post = Post.includes([:user, :categories]).find(params[:id])
   end
 
   # def set_likes

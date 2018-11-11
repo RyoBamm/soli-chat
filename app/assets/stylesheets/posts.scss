@@ -181,12 +181,58 @@
         margin-top: 20px;
       }
     }
+    &__category{
+      width: calc(100% - 60px);
+      height: 100%;
+      color: white;
+      padding: 0 30px;
+      h3{
+        width: 120px;
+        height: 30px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 17px;
+        font-weight: bold;
+        font-family: arial;
+        line-height: 30px;
+        text-align: center;
+        border: 1px solid  rgba(255, 255, 255, 0.7);
+        border-radius: 20px;
+        display: inline-block;
+        letter-spacing: 1px;
+        margin-left: 20px;
+      }
+      p{
+        width: calc(100% - 60px);
+        height: 100px;
+        font-size: 18px;
+        font-weight: normal;
+        overflow: scroll;
+        border-bottom: 1px solid  #444444;
+        margin-top: 40px;
+        .post_category_tag{
+          width: 120px;
+          height: 30px;
+          font-size: 17px;
+          font-weight: bold;
+          font-family: arial;
+          background: linear-gradient(to top, #d31027, #ea384d);
+          line-height: 30px;
+          text-align: center;
+          float: left;
+          display: inline-block;
+          border: 2px solid rgba(255, 255, 255, 0.7);
+          border-radius: 20px;
+          margin-left: 20px;
+        }
+      }
+    }
     &__comment{
       width: calc(100% - 60px);
       height: 100%;
       color: white;
       overflow: scroll;
       padding: 0 30px;
+      margin-top: 30px;
       h3{
         width: 120px;
         height: 30px;
@@ -386,7 +432,7 @@
 // View :new
 .posting_new_content{
   min-width: 870px;
-  height: 1500px;
+  height: 1700px;
   background-color: rgb(30, 30, 30);
   margin-top: 70px;
   .posting_content_description{
@@ -540,6 +586,32 @@
     textarea:focus{
       border: 2px solid #60EEFF;
       outline : none;
+    }
+  }
+  .category_selecters_wrapper{
+    margin: 30px 0 0 50px;
+    .category_selecter{
+      width: 170px;
+      font-size: 16px;
+      color: white;
+      background-color: rgb(30, 30, 30);
+      border: 2px solid #444444;
+      border-radius: 10px;
+      padding: 5px 10px;
+      margin-right: 40px;
+      option{
+        border-radius: 5px;
+      }
+    }
+    .category_selecter:focus{
+      border: 2px solid #60EEFF;
+      outline : none;
+    }
+    .category_selecter2{
+      display: none;
+    }
+    .category_selecter3{
+      display: none;
     }
   }
   .submitting_post_btn_wrapper{
