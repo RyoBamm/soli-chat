@@ -4,6 +4,44 @@
   background-image: url(
   https://images.unsplash.com/photo-1450044804117-534ccd6e6a3a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c50f5f3d8c43117cbbbbd2e3d9ecea46&auto=format&fit=crop&w=1567&q=80);
   background-size: cover;
+  padding-top: 100px;
   margin-top: 70px;
+  .top_title_content_message{
+    width: calc(100% - 100px);
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    padding-left: 100px;
+    margin-bottom: 30px;
+  }
+  .recommended_posts_slider{
+    width: calc(100% - 100px);
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-left: 50px;
+    .slick-arrow{
+      height: 30px;
+      width: 23px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 7px;
+    }
+
+    .posted_content{
+      width: 250px;
+      height: 350px;
+      background-color: black;
+      .posted_content__likes{
+        margin-bottom: 20px;
+      }
+      // width: 250px;
+      // height: 370px;
+      // color: white;
+      // border: 0.5px solid rgba(255, 255, 255, 1.0);
+      // border-radius: 10px;
+      // float: left;
+      // margin: 25px 25px 25px 25px;
+    }
+    // margin: 100px calc(100% - (100% - 60px));
+  }
 }
 

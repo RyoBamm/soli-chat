@@ -2,4 +2,10 @@
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "#{key}") %>
   <% end %>
+  <div class = "top_title_content_message">
+    <h3>オススメの投稿</h3>
+  </div>
+  <div class = "recommended_posts_slider" >
+    <%= render partial: 'shared/posted_content', collection: @recommended_posts %>
+  </div>
 </div>
