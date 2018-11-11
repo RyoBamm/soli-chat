@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
     redirect_to :root unless user_signed_in? && @user.id == current_user.id
 
-    @posts = @user.posts.page(params[:page]).per(4).order("created_at DESC")
+    @posts = @user.posts.includes(:categories).page(params[:page]).per(4).order("created_at DESC")
     @user_info = {posts_count: @user.posts.count,all_likes: total_likes_count(@user.id)}
     respond_to do |format|
       format.html
