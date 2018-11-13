@@ -79,4 +79,5 @@ gem 'kaminari'
 gem 'ruby-oembed'
 gem 'streamio-ffmpeg'
 gem 'kaminari-bootstrap'
+gem 'fog-aws'
 
