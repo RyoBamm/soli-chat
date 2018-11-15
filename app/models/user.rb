@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :likes
   has_many :comments
-  belongs_to :prefecture
+  belongs_to :prefecture, optional: true
 
   accepts_nested_attributes_for :prefecture
 
