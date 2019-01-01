@@ -85,11 +85,11 @@ ActiveRecord::Schema.define(version: 20181118152738) do
 
   create_table "users_relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "follower_id"
-    t.integer "followed_id"
+    t.integer "followee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["followed_id"], name: "index_users_relationships_on_followed_id"
-    t.index ["follower_id", "followed_id"], name: "index_users_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["followee_id"], name: "index_users_relationships_on_followee_id"
+    t.index ["follower_id", "followee_id"], name: "index_users_relationships_on_follower_id_and_followee_id", unique: true
     t.index ["follower_id"], name: "index_users_relationships_on_follower_id"
   end
 

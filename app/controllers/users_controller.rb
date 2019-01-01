@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   end
 
   private
-
   def set_user
     @user = User.includes(:prefecture).find(params[:id])
   end
